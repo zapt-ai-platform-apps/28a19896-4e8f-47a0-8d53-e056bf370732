@@ -28,15 +28,15 @@ const Header = () => {
           className="hidden md:block"
         >
           <ul className="flex gap-8 font-display text-lg">
-            <li><Link to="/" className="text-gray-300 hover:text-accent-gold transition-colors">Home</Link></li>
-            <li><Link to="/reading" className="text-gray-300 hover:text-accent-gold transition-colors">Reading</Link></li>
-            <li><Link to="/about" className="text-gray-300 hover:text-accent-gold transition-colors">About</Link></li>
+            <li><Link to="/" className="text-white hover:text-accent-gold transition-colors">Home</Link></li>
+            <li><Link to="/reading" className="text-white hover:text-accent-gold transition-colors">Reading</Link></li>
+            <li><Link to="/about" className="text-white hover:text-accent-gold transition-colors">About</Link></li>
           </ul>
         </motion.nav>
         
         <div className="md:hidden">
           {/* Mobile menu button - to be implemented if needed */}
-          <button className="text-white">
+          <button className="text-white cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>

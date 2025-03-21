@@ -5,10 +5,10 @@ import Card from './Card';
 const ReadingInterpretation = ({ reading, loading }) => {
   if (loading) {
     return (
-      <div className="mt-8 bg-mystical-light bg-opacity-20 p-6 rounded-lg max-w-2xl mx-auto">
+      <div className="mt-8 content-section max-w-2xl mx-auto">
         <div className="flex items-center justify-center">
           <div className="w-8 h-8 border-4 border-t-transparent border-accent-gold rounded-full animate-spin mr-3"></div>
-          <p>The stars are aligning to reveal your reading...</p>
+          <p className="text-lg md:text-xl">The stars are aligning to reveal your reading...</p>
         </div>
       </div>
     );
@@ -18,37 +18,37 @@ const ReadingInterpretation = ({ reading, loading }) => {
   
   return (
     <motion.div 
-      className="mt-8 bg-mystical-light bg-opacity-20 p-6 rounded-lg max-w-2xl mx-auto"
+      className="mt-8 content-section max-w-2xl mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-display gold-text mb-4 text-center">Your Tarot Reading</h2>
+      <h2 className="text-2xl md:text-3xl font-display gold-text mb-6 text-center">Your Tarot Reading</h2>
       
       <div className="prose prose-invert max-w-none">
         <div className="space-y-4">
           {reading.interpretation.split('\n\n').map((paragraph, idx) => (
-            <p key={idx} className="text-gray-200">{paragraph}</p>
+            <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
           ))}
         </div>
         
         {reading.astrological && (
-          <div className="mt-6">
-            <h3 className="text-xl font-display gold-text mb-2">Astrological Influence</h3>
+          <div className="mt-8">
+            <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Astrological Influence</h3>
             <div className="space-y-4">
               {reading.astrological.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-gray-200">{paragraph}</p>
+                <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
               ))}
             </div>
           </div>
         )}
         
         {reading.advice && (
-          <div className="mt-6">
-            <h3 className="text-xl font-display gold-text mb-2">Advice</h3>
+          <div className="mt-8">
+            <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Advice</h3>
             <div className="space-y-4">
               {reading.advice.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-gray-200">{paragraph}</p>
+                <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
               ))}
             </div>
           </div>
@@ -139,7 +139,7 @@ const Reading = ({ selectedCards, question, onReset }) => {
       </div>
       
       {flippedIndices.length < selectedCards.length && (
-        <p className="text-center mb-8 text-accent-gold italic">
+        <p className="text-center mb-8 text-accent-gold italic text-lg md:text-xl">
           Click on each card to reveal your reading
         </p>
       )}
@@ -149,7 +149,7 @@ const Reading = ({ selectedCards, question, onReset }) => {
       {reading && (
         <div className="mt-8 text-center">
           <button 
-            className="btn-secondary cursor-pointer"
+            className="btn-secondary cursor-pointer text-lg py-3 px-8"
             onClick={onReset}
           >
             New Reading

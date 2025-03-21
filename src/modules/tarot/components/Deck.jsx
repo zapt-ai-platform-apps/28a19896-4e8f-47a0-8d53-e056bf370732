@@ -30,7 +30,7 @@ const Deck = ({ onSelectCards }) => {
   return (
     <div className="mb-12 flex flex-col items-center">
       <motion.div 
-        className="relative w-[180px] h-[300px] mb-6"
+        className="relative w-[180px] h-[300px] mb-8"
         animate={{
           rotateZ: shuffling ? [0, -5, 5, -5, 0] : 0,
         }}
@@ -57,7 +57,7 @@ const Deck = ({ onSelectCards }) => {
       
       <div className="flex flex-col sm:flex-row gap-4">
         <button 
-          className="btn-secondary cursor-pointer" 
+          className="btn-secondary cursor-pointer text-lg py-3 px-8" 
           onClick={shuffleCards}
           disabled={shuffling}
         >
@@ -65,7 +65,7 @@ const Deck = ({ onSelectCards }) => {
         </button>
         
         <button 
-          className="btn-primary cursor-pointer" 
+          className="btn-primary cursor-pointer text-lg py-3 px-8" 
           onClick={() => drawCards(3)}
           disabled={shuffling}
         >

@@ -11,8 +11,8 @@ const CelestialBackground = () => {
     const existingStars = container.querySelectorAll('.star');
     existingStars.forEach(star => star.remove());
     
-    // Create stars
-    const numStars = Math.floor(window.innerWidth * window.innerHeight / 2000);
+    // Create fewer stars for better readability
+    const numStars = Math.floor(window.innerWidth * window.innerHeight / 4000); // Reduced density by half
     
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement('div');
@@ -28,6 +28,9 @@ const CelestialBackground = () => {
       const top = Math.random() * 100;
       star.style.left = `${left}%`;
       star.style.top = `${top}%`;
+      
+      // Reduce brightness by using lower opacity
+      star.style.opacity = (Math.random() * 0.5 + 0.2).toString(); // Between 0.2 and 0.7
       
       // Random twinkle animation timing
       star.style.setProperty('--duration', `${3 + Math.random() * 4}s`);

@@ -28,7 +28,7 @@ const ReadingPage = () => {
   return (
     <div className="min-h-screen py-8 px-4 md:px-8">
       <motion.h1 
-        className="text-3xl md:text-5xl font-display gold-text text-center mb-6"
+        className="text-3xl md:text-5xl font-display gold-text text-center mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ const ReadingPage = () => {
       </motion.h1>
       
       <motion.p 
-        className="text-center text-gray-300 mb-12 max-w-2xl mx-auto"
+        className="text-center text-white text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}

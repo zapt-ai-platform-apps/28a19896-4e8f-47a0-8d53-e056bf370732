@@ -30,16 +30,16 @@ const QuestionForm = ({ onSubmit }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <form onSubmit={handleSubmit} className="mb-8">
+      <form onSubmit={handleSubmit} className="mb-8 content-section">
         <div className="mb-4">
-          <label htmlFor="question" className="block mb-2 text-lg text-accent-gold font-display">
+          <label htmlFor="question" className="block mb-3 text-xl text-accent-gold font-display">
             Focus on your question:
           </label>
           
           <input
             type="text"
             id="question"
-            className="input-field w-full box-border"
+            className="input-field w-full box-border text-lg"
             placeholder="What would you like to know?"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
@@ -48,19 +48,19 @@ const QuestionForm = ({ onSubmit }) => {
           
           {showSuggestions && (
             <motion.div 
-              className="mt-2 bg-mystical-light bg-opacity-70 rounded-md overflow-hidden shadow-lg"
+              className="mt-2 bg-mystical-light bg-opacity-80 rounded-md overflow-hidden shadow-lg"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               transition={{ duration: 0.3 }}
             >
-              <div className="p-2 text-sm text-accent-gold">
+              <div className="p-2 text-sm md:text-base text-accent-gold">
                 Common questions:
               </div>
               <ul>
                 {commonQuestions.map((q, i) => (
                   <li 
                     key={i}
-                    className="px-4 py-2 hover:bg-mystical-purple cursor-pointer transition-colors"
+                    className="px-4 py-3 hover:bg-mystical-purple cursor-pointer transition-colors text-white text-base md:text-lg"
                     onClick={() => selectSuggestion(q)}
                   >
                     {q}
@@ -73,7 +73,7 @@ const QuestionForm = ({ onSubmit }) => {
         
         <button 
           type="submit" 
-          className="btn-primary w-full cursor-pointer"
+          className="btn-primary w-full cursor-pointer text-lg py-3"
         >
           Begin Reading
         </button>

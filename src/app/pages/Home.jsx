@@ -12,20 +12,20 @@ const Home = () => {
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl font-display gold-text mb-6">
+          <h1 className="text-4xl md:text-6xl font-display gold-text mb-8">
             Divine Guidance Through Tarot & Astrology
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
             Our innovative platform enhances your readings with the power of AI to blend the mystical wisdom of Tarot with the precise insights of Astrology.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link to="/reading" className="btn-primary text-center text-lg px-8 py-3">
+            <Link to="/reading" className="btn-primary text-center text-lg px-8 py-3 cursor-pointer">
               Start Your Reading
             </Link>
             
-            <Link to="/about" className="btn-secondary text-center text-lg px-8 py-3">
+            <Link to="/about" className="btn-secondary text-center text-lg px-8 py-3 cursor-pointer">
               Learn More
             </Link>
           </div>
@@ -38,22 +38,22 @@ const Home = () => {
           className="w-full max-w-5xl mt-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-mystical-light bg-opacity-20 rounded-lg p-6 hover:bg-opacity-30 transition-all duration-300">
+            <div className="content-section hover:bg-mystical-light/40 transition-all duration-300">
               <div className="mb-4 text-accent-gold text-3xl">✨</div>
-              <h3 className="text-xl font-display gold-text mb-2">Tarot Wisdom</h3>
-              <p className="text-gray-300">Discover the ancient guidance of Tarot cards, interpreted through our advanced AI system for personalized insights.</p>
+              <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Tarot Wisdom</h3>
+              <p className="text-white text-lg">Discover the ancient guidance of Tarot cards, interpreted through our advanced AI system for personalized insights.</p>
             </div>
             
-            <div className="bg-mystical-light bg-opacity-20 rounded-lg p-6 hover:bg-opacity-30 transition-all duration-300">
+            <div className="content-section hover:bg-mystical-light/40 transition-all duration-300">
               <div className="mb-4 text-accent-gold text-3xl">🌙</div>
-              <h3 className="text-xl font-display gold-text mb-2">Astrological Insights</h3>
-              <p className="text-gray-300">Get deeper understanding through astrological connections that enhance your Tarot reading with cosmic context.</p>
+              <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Astrological Insights</h3>
+              <p className="text-white text-lg">Get deeper understanding through astrological connections that enhance your Tarot reading with cosmic context.</p>
             </div>
             
-            <div className="bg-mystical-light bg-opacity-20 rounded-lg p-6 hover:bg-opacity-30 transition-all duration-300">
+            <div className="content-section hover:bg-mystical-light/40 transition-all duration-300">
               <div className="mb-4 text-accent-gold text-3xl">🔮</div>
-              <h3 className="text-xl font-display gold-text mb-2">AI-Enhanced Readings</h3>
-              <p className="text-gray-300">Our state-of-the-art AI combines traditional tarot wisdom with modern psychological and astrological insights.</p>
+              <h3 className="text-xl md:text-2xl font-display gold-text mb-4">AI-Enhanced Readings</h3>
+              <p className="text-white text-lg">Our state-of-the-art AI combines traditional tarot wisdom with modern psychological and astrological insights.</p>
             </div>
           </div>
         </motion.div>
