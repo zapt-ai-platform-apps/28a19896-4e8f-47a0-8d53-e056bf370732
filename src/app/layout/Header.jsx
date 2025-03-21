@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <header className="py-6 px-4 md:px-8">
+    <header className="py-6 px-4 md:px-8 relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -35,14 +41,62 @@ const Header = () => {
         </motion.nav>
         
         <div className="md:hidden">
-          {/* Mobile menu button - to be implemented if needed */}
-          <button className="text-white cursor-pointer">
+          <button 
+            className="text-white cursor-pointer p-2 hover:text-accent-gold transition-colors"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className="absolute top-full left-0 right-0 bg-mystical-dark/95 backdrop-blur-md z-50 border-t border-mystical-light/30"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav className="py-6 px-4">
+              <ul className="flex flex-col gap-6 font-display text-xl">
+                <li>
+                  <Link 
+                    to="/" 
+                    className="text-white hover:text-accent-gold transition-colors block py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/reading" 
+                    className="text-white hover:text-accent-gold transition-colors block py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Reading
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/about" 
+                    className="text-white hover:text-accent-gold transition-colors block py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
