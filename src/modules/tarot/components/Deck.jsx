@@ -50,12 +50,23 @@ const Deck = ({ onSelectCards }) => {
             }}
           >
             {index === 0 && (
-              <img src="https://images.unsplash.com/photo-1513569771920-c9e1d31714af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8bXlzdGljYWwlMjB0YXJvdCUyMGNhcmQlMjBiYWNrJTIwd2l0aCUyMGNlbGVzdGlhbCUyMGRlc2lnbiUyQyUyMHN0YXJzJTJDJTIwbW9vbiUyMHBoYXNlcyUyQyUyMHNhY3JlZCUyMGdlb21ldHJ5JTJDJTIwZGFyayUyMGluZGlnbyUyMGFuZCUyMGdvbGQlMjBjb2xvcnN8ZW58MHx8fHwxNzQyNTcwMjkzfDA&ixlib=rb-4.0.3&q=80&w=1080" 
-                 
-                data-image-request="mystical tarot card back with celestial design, stars, moon phases, sacred geometry, dark indigo and gold colors"
-                alt="Tarot Card Deck" 
-                className="w-full h-full object-cover rounded-lg opacity-90" 
-              />
+              <div className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-b from-mystical-dark to-mystical-purple border-2 border-accent-gold rounded-lg">
+                <div className="text-accent-gold text-4xl mb-2">✧</div>
+                <div className="flex justify-center items-center my-2">
+                  <div className="text-accent-gold text-2xl mx-1">☽</div>
+                  <div className="text-accent-gold text-3xl mx-1">★</div>
+                  <div className="text-accent-gold text-2xl mx-1">☾</div>
+                </div>
+                <div className="w-16 h-16 border-2 border-accent-gold rounded-full flex items-center justify-center my-2">
+                  <div className="w-12 h-12 border-2 border-accent-gold rotate-45"></div>
+                </div>
+                <div className="flex justify-center items-center my-2">
+                  <div className="text-accent-gold text-2xl mx-1">☽</div>
+                  <div className="text-accent-gold text-3xl mx-1">★</div>
+                  <div className="text-accent-gold text-2xl mx-1">☾</div>
+                </div>
+                <div className="text-accent-gold text-4xl mt-2">✧</div>
+              </div>
             )}
           </div>
         ))}

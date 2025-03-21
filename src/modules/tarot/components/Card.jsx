@@ -21,13 +21,24 @@ const Card = ({ card, isFlipped, onClick, position }) => {
       <div className={`card-inner w-full h-full ${isFlipped ? 'flipped' : ''}`}>
         <div className="card-back absolute rounded-lg overflow-hidden flex items-center justify-center w-full h-full shadow-lg">
           <div className="absolute inset-0 card-back rounded-lg"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw2fHxteXN0aWNhbCUyMHRhcm90JTIwY2FyZCUyMGJhY2slMjB3aXRoJTIwY2VsZXN0aWFsJTIwZGVzaWduJTJDJTIwc3RhcnMlMkMlMjBtb29uJTIwcGhhc2VzJTJDJTIwc2FjcmVkJTIwZ2VvbWV0cnklMkMlMjBkYXJrJTIwaW5kaWdvJTIwYW5kJTIwZ29sZCUyMGNvbG9yc3xlbnwwfHx8fDE3NDI1NzAyOTN8MA&ixlib=rb-4.0.3&q=80&w=1080" 
-               
-              data-image-request="mystical tarot card back with celestial design, stars, moon phases, sacred geometry, dark indigo and gold colors"
-              alt="Tarot Card Back" 
-              className="w-full h-full object-cover opacity-90" 
-            />
+          <div className="absolute inset-0 flex items-center justify-center bg-mystical-purple">
+            <div className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-b from-mystical-dark to-mystical-purple border-2 border-accent-gold">
+              <div className="text-accent-gold text-4xl mb-2">✧</div>
+              <div className="flex justify-center items-center my-2">
+                <div className="text-accent-gold text-2xl mx-1">☽</div>
+                <div className="text-accent-gold text-3xl mx-1">★</div>
+                <div className="text-accent-gold text-2xl mx-1">☾</div>
+              </div>
+              <div className="w-16 h-16 border-2 border-accent-gold rounded-full flex items-center justify-center my-2">
+                <div className="w-12 h-12 border-2 border-accent-gold rotate-45"></div>
+              </div>
+              <div className="flex justify-center items-center my-2">
+                <div className="text-accent-gold text-2xl mx-1">☽</div>
+                <div className="text-accent-gold text-3xl mx-1">★</div>
+                <div className="text-accent-gold text-2xl mx-1">☾</div>
+              </div>
+              <div className="text-accent-gold text-4xl mt-2">✧</div>
+            </div>
           </div>
         </div>
         
