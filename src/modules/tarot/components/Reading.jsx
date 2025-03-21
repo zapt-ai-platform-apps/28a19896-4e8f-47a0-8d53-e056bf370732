@@ -1,6 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Card from './Card';
+
+const MarkdownRenderer = ({ content }) => {
+  if (!content) return null;
+
+  return (
+    <ReactMarkdown 
+      remarkPlugins={[remarkGfm]} 
+      className="text-white"
+      components={{
+        p: ({node, ...props}) => <p className="text-white text-lg md:text-xl leading-relaxed mb-4" {...props} />,
+        h1: ({node, ...props}) => <h1 className="text-2xl md:text-3xl font-display gold-text mb-6" {...props} />,
+        h2: ({node, ...props}) => <h2 className="text-xl md:text-2xl font-display gold-text mb-4" {...props} />,
+        h3: ({node, ...props}) => <h3 className="text-lg md:text-xl font-display gold-text mb-3" {...props} />,
+        ul: ({node, ...props}) => <ul className="list-disc pl-6 mb-4 space-y-2" {...props} />,
+        ol: ({node, ...props}) => <ol className="list-decimal pl-6 mb-4 space-y-2" {...props} />,
+        li: ({node, ...props}) => <li className="text-lg leading-relaxed" {...props} />,
+        blockquote: ({node, ...props}) => (
+          <blockquote className="border-l-4 border-accent-gold pl-4 italic my-4" {...props} />
+        ),
+        em: ({node, ...props}) => <em className="italic" {...props} />,
+        strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
+      }}
+    >
+      {content}
+    </ReactMarkdown>
+  );
+};
 
 const ReadingInterpretation = ({ reading, loading }) => {
   if (loading) {
@@ -25,32 +54,22 @@ const ReadingInterpretation = ({ reading, loading }) => {
     >
       <h2 className="text-2xl md:text-3xl font-display gold-text mb-6 text-center">Your Tarot Reading</h2>
       
-      <div className="prose prose-invert max-w-none">
-        <div className="space-y-4">
-          {reading.interpretation.split('\n\n').map((paragraph, idx) => (
-            <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
-          ))}
+      <div className="space-y-6">
+        <div>
+          <MarkdownRenderer content={reading.interpretation} />
         </div>
         
         {reading.astrological && (
           <div className="mt-8">
             <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Astrological Influence</h3>
-            <div className="space-y-4">
-              {reading.astrological.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
-              ))}
-            </div>
+            <MarkdownRenderer content={reading.astrological} />
           </div>
         )}
         
         {reading.advice && (
           <div className="mt-8">
             <h3 className="text-xl md:text-2xl font-display gold-text mb-4">Advice</h3>
-            <div className="space-y-4">
-              {reading.advice.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">{paragraph}</p>
-              ))}
-            </div>
+            <MarkdownRenderer content={reading.advice} />
           </div>
         )}
       </div>
@@ -104,6 +123,7 @@ const Reading = ({ selectedCards, question, onReset }) => {
       }
       
       const data = await response.json();
+      console.log('Received reading data:', data);
       setReading(data);
     } catch (error) {
       console.error('Error generating reading:', error);

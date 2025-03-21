@@ -22,20 +22,20 @@ const Card = ({ card, isFlipped, onClick, position }) => {
         <div className="card-back absolute rounded-lg overflow-hidden flex items-center justify-center w-full h-full shadow-lg">
           <div className="absolute inset-0 card-back rounded-lg"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8bXlzdGljYWwlMjB0YXJvdCUyMGNhcmQlMjBiYWNrJTIwd2l0aCUyMGNvc21pYyUyMGRlc2lnbnxlbnwwfHx8fDE3NDI1Njk5NjB8MA&ixlib=rb-4.0.3&q=80&w=1080" 
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw2fHxteXN0aWNhbCUyMHRhcm90JTIwY2FyZCUyMGJhY2slMjB3aXRoJTIwY2VsZXN0aWFsJTIwZGVzaWduJTJDJTIwc3RhcnMlMkMlMjBtb29uJTIwcGhhc2VzJTJDJTIwc2FjcmVkJTIwZ2VvbWV0cnklMkMlMjBkYXJrJTIwaW5kaWdvJTIwYW5kJTIwZ29sZCUyMGNvbG9yc3xlbnwwfHx8fDE3NDI1NzAyOTN8MA&ixlib=rb-4.0.3&q=80&w=1080" 
                
-              data-image-request="mystical tarot card back with cosmic design"
+              data-image-request="mystical tarot card back with celestial design, stars, moon phases, sacred geometry, dark indigo and gold colors"
               alt="Tarot Card Back" 
-              className="w-[120px] h-[120px] object-contain opacity-80" 
+              className="w-full h-full object-cover opacity-90" 
             />
           </div>
         </div>
         
         {card && (
           <div className="card-front absolute rounded-lg overflow-hidden w-full h-full shadow-lg bg-mystical-dark border-2 border-accent-gold">
-            <img src="https://images.unsplash.com/photo-1582125169517-53e6192d476b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8JTYwZGV0YWlsZWQlMjB0YXJvdCUyMGNhcmQlMjBpbGx1c3RyYXRpb24lMjBvZiUyMCUyNCU3QmNhcmQubmFtZXxlbnwwfHx8fDE3NDI1Njk5NjB8MA&ixlib=rb-4.0.3&q=80&w=1080" 
+            <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHwlNjB0cmFkaXRpb25hbCUyMHRhcm90JTIwY2FyZCUyMGlsbHVzdHJhdGlvbiUyMG9mJTIwJTI0JTdCY2FyZC5uYW1lfGVufDB8fHx8MTc0MjU3MDI5NHww&ixlib=rb-4.0.3&q=80&w=1080" 
                
-              data-image-request={`detailed tarot card illustration of ${card.name}`}
+              data-image-request={`traditional tarot card illustration of ${card.name}, mystical, detailed, rich colors`}
               alt={card.name} 
               className="w-full h-full object-cover" 
             />

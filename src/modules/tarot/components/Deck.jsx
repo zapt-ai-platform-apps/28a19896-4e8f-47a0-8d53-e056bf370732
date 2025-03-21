@@ -48,11 +48,17 @@ const Deck = ({ onSelectCards }) => {
               left: `${index * 1}px`,
               zIndex: 5 - index,
             }}
-          ></div>
+          >
+            {index === 0 && (
+              <img src="https://images.unsplash.com/photo-1513569771920-c9e1d31714af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8bXlzdGljYWwlMjB0YXJvdCUyMGNhcmQlMjBiYWNrJTIwd2l0aCUyMGNlbGVzdGlhbCUyMGRlc2lnbiUyQyUyMHN0YXJzJTJDJTIwbW9vbiUyMHBoYXNlcyUyQyUyMHNhY3JlZCUyMGdlb21ldHJ5JTJDJTIwZGFyayUyMGluZGlnbyUyMGFuZCUyMGdvbGQlMjBjb2xvcnN8ZW58MHx8fHwxNzQyNTcwMjkzfDA&ixlib=rb-4.0.3&q=80&w=1080" 
+                 
+                data-image-request="mystical tarot card back with celestial design, stars, moon phases, sacred geometry, dark indigo and gold colors"
+                alt="Tarot Card Deck" 
+                className="w-full h-full object-cover rounded-lg opacity-90" 
+              />
+            )}
+          </div>
         ))}
-        
-        {/* Top card */}
-        <Card />
       </motion.div>
       
       <div className="flex flex-col sm:flex-row gap-4">
