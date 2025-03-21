@@ -1,3 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-bg-primary: #0e0b14;
+  --color-bg-secondary: #161228;
+  --color-accent-gold: #d4af37;
+  --color-accent-purple: #7b4397;
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #c5bfd2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-b from-[#0e0b14] to-[#191230];
+  font-family: 'Cormorant', serif;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+}
+
+.card-shadow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 font-medium py-2 px-6 rounded-md 
+  transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-purple-800 to-indigo-900 text-white font-medium py-2 px-6 rounded-md
+  transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30 active:scale-95;
+}
+
+.input-field {
+  @apply bg-gray-800/60 border border-gray-600 rounded-md px-4 py-2 text-white 
+  focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all;
+}
+
+.zapt-badge {
+  @apply fixed bottom-4 left-4 text-xs md:text-sm text-gray-300 opacity-70 hover:opacity-100 transition-opacity;
+}
+
+.cosmic-bg {
+  background-image: radial-gradient(circle at 50% 50%, rgba(123, 67, 151, 0.1), transparent 60%),
+                    radial-gradient(circle at 85% 30%, rgba(218, 112, 214, 0.05), transparent 40%),
+                    radial-gradient(circle at 15% 70%, rgba(75, 0, 130, 0.1), transparent 50%);
+}
+
+.star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 4px white, 0 0 8px white;
+  animation: twinkle var(--duration, 4s) infinite var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gold-text {
+  background: linear-gradient(to right, #d4af37, #f5e4b2, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-back {
+  background-image: linear-gradient(45deg, #232042 25%, #2a2452 25%, #2a2452 50%, #232042 50%, #232042 75%, #2a2452 75%, #2a2452);
+  background-size: 20px 20px;
+  border: 2px solid var(--color-accent-gold);
+}
+
+.spread-area {
+  @apply relative flex flex-wrap justify-center gap-4 p-4 w-full max-w-5xl mx-auto;
+  min-height: 300px;
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
